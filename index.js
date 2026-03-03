@@ -17,7 +17,9 @@ app.post("/v1/chat/completions", async (req, res) => {
             })
         });
 
-        const data = await response.json();
+    const text = await response.text();
+    console.log(text);
+    res.send(text);
 
         res.json({
             choices: [
